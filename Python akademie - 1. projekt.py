@@ -41,7 +41,7 @@ garpike and stingray are also present.'''
 
 # Vyžádá si od uživatele přihlašovací jméno a heslo
 
-# databáze registrovaných uživatelů
+# Databáze registrovaných uživatelů
 uzivatele = {"bob": "pass", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 
 jmeno = input("user: ")
@@ -108,10 +108,10 @@ for slovo in vypsana_slova:
 print("There are ", len(uppercase_words), "uppercase words.")
 
 # Počet slov psaných pouze malými písmeny
-lowercase_words = {}
+lowercase_words = []
 for slovo in vypsana_slova:
-    if slovo.islower() and not any(char.isdigit() for char in slovo):
-        lowercase_words[slovo] = lowercase_words.get(slovo, 0) + 1
+    if slovo.isalpha() and slovo.islower():
+        lowercase_words.append(slovo)
 print("There are ", len(lowercase_words), "lowercase words.")
 
 # Počet slov, která obsahují číslo (bez '30N')
@@ -144,7 +144,7 @@ hlavicka_delka = "LEN"
 hlavicka_hvezdicky = "OCCURENCES"
 hlavicka_pocet = "NR."
 print()
-print(f"{hlavicka_delka:>6} | {hlavicka_hvezdicky:>15} | {hlavicka_pocet:>5}")
+print(f"{hlavicka_delka:>6} | {hlavicka_hvezdicky:>17} | {hlavicka_pocet:>5}")
 
 for delka_slova, pocet_slov in pocet_vyskytu_sorted.items():
-    print(f"{delka_slova:>6} | {'*' * pocet_slov:>15} | {pocet_slov:>5}")
+    print(f"{delka_slova:>6} | {'*' * pocet_slov:>17} | {pocet_slov:>5}")
